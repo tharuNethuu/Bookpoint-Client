@@ -39,7 +39,7 @@ const UploadBooks = () => {
     console.log(booksObj)
 
     //send data to database
-    fetch("https://bookpoint-client.vercel.app/upload-book",{
+    fetch("https://bookpoint-api.vercel.app/upload-book",{
       method:"POST",
       headers:{
         "Content-Type":"application/json",

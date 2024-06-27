@@ -15,7 +15,7 @@ const Notifications = () => {
   const [alertVisible, setAlertVisible] = useState(false);
 
   useEffect(() => {
-    fetch(`https://bookpoint-client.vercel.app/notifications/${email}`)
+    fetch(`https://bookpoint-api.vercel.app/notifications/${email}`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -31,7 +31,7 @@ const Notifications = () => {
     console.log(`Sending message: ${newMessage} to ${email}`);
 
     try {
-      const response = await fetch(`https://bookpoint-client.vercel.app/notifications/${email}`, {
+      const response = await fetch(`https://bookpoint-api.vercel.app/notifications/${email}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const Notifications = () => {
 
   const handleDeleteMessage = async (messageId) => {
     try {
-      const response = await fetch(`https://bookpoint-client.vercel.app/notifications/${email}/${messageId}`, {
+      const response = await fetch(`https://bookpoint-api.vercel.app/notifications/${email}/${messageId}`, {
         method: 'DELETE'
       });
   

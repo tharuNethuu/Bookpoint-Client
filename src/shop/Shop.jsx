@@ -16,7 +16,7 @@ const Shop = () => {
     window.scrollTo(0, 0);});
 
   useEffect (() => {
-fetch("https://bookpoint-client.vercel.app/all-books").then(res => res.json()).then(data=> setBooks(data));
+fetch("https://bookpoint-api.vercel.app/all-books").then(res => res.json()).then(data=> setBooks(data));
   }, [])
 
   return (
@@ -66,7 +66,7 @@ const Shop = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetch("https://bookpoint-client.vercel.app/all-books").then(res => res.json()).then(data => setBooks(data));
+    fetch("https://bookpoint-api.vercel.app/all-books").then(res => res.json()).then(data => setBooks(data));
   }, []);
 
   const addItemToWishList = (bookId) => {

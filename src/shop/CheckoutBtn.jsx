@@ -55,7 +55,7 @@ export default function CheckoutBtn({ wishListBooks, copies, totalPrice }) {
         province
       };
 
-      const response = await fetch('https://bookpoint-client.vercel.app/orders', {
+      const response = await fetch('https://bookpoint-api.vercel.app/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

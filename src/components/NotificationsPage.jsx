@@ -11,7 +11,7 @@ const NotificationPage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetch(`https://bookpoint-client.vercel.app/notifications/${email}`)
+    fetch(`https://bookpoint-api.vercel.app/notifications/${email}`)
       .then(response => response.json())
       .then(data => setMessages(data))
       .catch(error => console.error('Error fetching notifications:', error));

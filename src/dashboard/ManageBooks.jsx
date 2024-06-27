@@ -11,14 +11,14 @@ const ManageBooks = () => {
   const [alertVariant, setAlertVariant] = useState('success');
   const [alertVisible, setAlertVisible] = useState(false);
   useEffect(() =>{
-    fetch("https://bookpoint-client.vercel.app/all-books").then(res => res.json()).then(data => setAllBooks(data));
+    fetch("https://bookpoint-api.vercel.app/all-books").then(res => res.json()).then(data => setAllBooks(data));
   },[])
 
   //delete books
   const handleDelete = (id) => {
     const confirmed = window.confirm("Are you sure you want to delete this book?");
     if (confirmed) {
-      fetch(`https://bookpoint-client.vercel.app/book/${id}`, {
+      fetch(`https://bookpoint-api.vercel.app/book/${id}`, {
         method: "DELETE",
       }).then(res => res.json()).then(data => {
         setAlertMessage("Book is deleted successfully!");

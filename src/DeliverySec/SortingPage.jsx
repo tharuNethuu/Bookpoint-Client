@@ -9,7 +9,7 @@ const SortingPage = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        let url = 'https://bookpoint-client.vercel.app/ordersdelivery?status=Yes';
+        let url = 'https://bookpoint-api.vercel.app/ordersdelivery?status=Yes';
         if (selectedPerson) {
           url += `&assignedPerson=${selectedPerson}`;
         }

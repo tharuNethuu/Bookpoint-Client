@@ -1,140 +1,3 @@
-/* import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import SortingPage from './SortingPage';
-import MyFooter from '../components/MyFooter';
-import logo from '../components/logo-removebg14.png'; 
-import ConfirmOrder from './ConfirmOrder';
-
-
-const ProvinceOrders = () => {
-  
-  const { province } = useParams();
-  const [orders, setOrders] = useState([]);
-  const [error, setError] = useState('');
-  const [selectedProvince, setSelectedProvince] = useState(province || '');
-  const [provinces] = useState([
-    'Central',
-    'Eastern',
-    'Northern',
-    'North-Western',
-    'North-Central',
-    'Southern',
-    'Western',
-    'Sabaragamuwa',
-    'Uva'
-  ]);
-
-  useEffect(() => {
-    const fetchOrders = async () => {
-      try {
-        let url = 'https://bookpoint-client.vercel.app/ordersdelivery?status=Yes';
-        if (selectedProvince) {
-          url += `&province=${selectedProvince.replace(/ /g, '-')}`;
-        }
-        const response = await fetch(url);
-        console.log('Fetching URL:', url);
-        if (!response.ok) {
-          throw new Error('Failed to fetch');
-        }
-        const data = await response.json();
-        console.log('Fetched data:', data);
-        setOrders(data);
-      } catch (error) {
-        setError(error.message);
-        console.error('Error fetching orders:', error);
-      }
-    };
-
-    fetchOrders();
-  }, [selectedProvince]);
-
-  const handleProvinceChange = (e) => {
-    setSelectedProvince(e.target.value);
-  };
-
-  if (error) {
-    return <div className="error">Error: {error}</div>;
-  }
-
-  if (orders.length === 0) {
-    return <div className="no-orders">
-
-        
-        No completed orders found for this province.</div>;
-  }
-
-  return (
-    <div>
-       <header className='w-full bg-image fixed top-0 left-0 right-0 transition-all ease-in duration-300 py-3'>
-                <div className='flex justify-between items-center text-base gap-8'>
-                    <Link to="/" className='flex items-center gap-0 w-40'>
-                        <img src={logo} alt="Brand Logo" className='space-x-50 navbar-brand-img w-40 md:w-3/4' />
-                        <span className='text-2xl font-bold text-yellow-500 flex items-center gap-10'>NETH BOOKPOINT</span>
-                    </Link>
-                    <ul className='md:flex px-10 hidden text-yellow-400 font-semibold text-3xl '>
-                    Delivery Crew Dashboard
-                    </ul>
-                    
-
-                </div>
-        </header>
-
-<div className="orders-page py-40 px-20">
-<div>
-    <h1 className="text-4xl font-bold">Ready for Dispatch: <span className='text-yellow-800'>Orders Pending Delivery</span></h1>
-    <div className="mb-4 py-5">
-      <label htmlFor="province" className="mr-2 font-semibold text-lg">Select Province:</label>
-      <select id="province" value={selectedProvince} onChange={handleProvinceChange} className="border p-2 px-2 rounded-full bg-yellow-900 text-white font-semibold text-center">
-        <option value="">All Provinces</option>
-        {provinces.map((province) => (
-          <option key={province} value={province}>{province}</option>
-        ))}
-      </select>
-    </div>
-    <div className="order-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {orders.map(order => (
-        <div key={order._id} className="order-card border p-4 rounded shadow-2xl bg-yellow-200 shadow-gray-600 hover:shadow-2xl hover:shadow-gray-800 hover:bg-white">
-          <h2 className="text-xl font-semibold">Order ID: {order._id}</h2>
-          <p><strong>Receiver Name:</strong> {order.receiverName}</p>
-          <p><strong>Billing Address:</strong> {order.billingAddress}</p>
-          <p><strong>Sending Address:</strong> {order.sendingAddress}</p>
-          <p><strong>Province:</strong> {order.province}</p>
-          <p><strong>Contact Number:</strong> {order.contactNumber}</p>
-          <p><strong>Total Price:</strong> Rs. {order.totalPrice.toFixed(2)}</p>
-          <p><strong>Assigned Person:</strong>{order.assignedPerson}</p>
-
-          <h3 className="text-lg font-semibold">Books:</h3>
-          <ul>
-            {order.books.map((book, index) => (
-              <li key={index}>{book.bookTitle} - {book.copies} copies - Rs. {book.price.toFixed(2)}</li>
-            ))}
-          </ul>
-          <ConfirmOrder/>
-        </div>
-        
-      ))}
-
-    </div>
-  </div>
-  
-
-  <div className='py-20'>
-    <SortingPage/>
-  
-    
-  </div>
-</div>
-     
-<MyFooter/>
-  </div>
-    
-
-  );
-};
-
-export default ProvinceOrders;
- */
-
 
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
@@ -170,7 +33,7 @@ const ProvinceOrders = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                let url = 'https://bookpoint-client.vercel.app/ordersdelivery?status=Yes';
+                let url = 'https://bookpoint-api.vercel.app/ordersdelivery?status=Yes';
                 if (selectedProvince) {
                     url += `&province=${selectedProvince.replace(/ /g, '-')}`;
                 }
@@ -197,7 +60,7 @@ const ProvinceOrders = () => {
 
     const handleUpdateDeliveryStatus = async (orderId, delivered) => {
         try {
-            const response = await fetch(`https://bookpoint-client.vercel.app/ordersdelivery/${orderId}`, {
+            const response = await fetch(`https://bookpoint-api.vercel.app/ordersdelivery/${orderId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

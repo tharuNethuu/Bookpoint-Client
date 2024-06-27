@@ -1,4 +1,5 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React from 'react';
+import { createBrowserRouter } from 'react-router-dom';
 import App from "../App";
 import Home from "../home/Home";
 import Shop from "../shop/Shop";
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: '/',
+        path: "/",
         element: <Home />
       },
       {
@@ -50,11 +51,11 @@ const router = createBrowserRouter([
         element: <AwardBooks />
       },
       {
-        path: "logout",
+        path: "/logout",
         element: <Logout />
       },
       {
-        path: "wishlist-details",
+        path: "/wishlist-details",
         element: <WishlistDetails />
       },
       {
@@ -100,7 +101,7 @@ const router = createBrowserRouter([
     element: <Signup />
   },
   {
-    path: "login",
+    path: "/login",
     element: <Login />
   },
   {

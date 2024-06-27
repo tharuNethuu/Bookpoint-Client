@@ -57,11 +57,12 @@ const router = createBrowserRouter([
         path: "wishlist-details",
         element: <WishlistDetails />
       },
-      {
-        path: "/book/:id",
-        element: <SingleBook />,
-        loader: ({ params }) => fetch(https://bookpoint-api.vercel.app/books/${params.id})
-      }
+      
+        {
+          path: "/book/:id",
+          element: <SingleBook/>,
+          loader:({params}) => fetch (`https://bookpoint-api.vercel.app/books/${params.id}`)
+        },
     ]
   },
   {

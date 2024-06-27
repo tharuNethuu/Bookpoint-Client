@@ -78,26 +78,26 @@ import ProvinceOrders from "../DeliverySec/ProvinceOrders";
         
         },
         {
-          path: "/upload",
+          path: "/admin/dashboard/upload",
           element: <UploadBooks/>
         
         },
         
         {
-          path: "/manage",
+          path: "/admin/dashboard/manage",
           element: <ManageBooks/>
         
         },{
-          path:"/orders",
+          path:"/admin/dashboard/orders",
           element: <Orderpage/>
         }, 
         {
-          path: "/edit-books/:id",
+          path: "/admin/dashboard/edit-books/:id",
           element: <EditBooks/>,
           loader:({params}) => fetch (`https://bookpoint-api.vercel.app/books/${params.id}`)
         
         },{
-          path: "/notifications/:email",
+          path: "/admin/dashboard/notifications/:email",
           element: <Notifications/>
         }
         

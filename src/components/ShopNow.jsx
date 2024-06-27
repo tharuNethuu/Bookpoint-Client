@@ -11,7 +11,7 @@ const Shop = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetch("http://localhost:5000/all-books").then(res => res.json()).then(data => setBooks(data));
+    fetch("https://bookpoint-client.vercel.app/all-books").then(res => res.json()).then(data => setBooks(data));
   }, []);
 
   const addItemToWishList = (bookId) => {

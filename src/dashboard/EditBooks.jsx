@@ -33,7 +33,7 @@ const EditBooks = () => {
       bookTitle, authorName, category, bookDescription, Price, imageUrl, availability
     };
 
-    fetch(`http://localhost:5000/book/${id}`, {
+    fetch(`https://bookpoint-client.vercel.app/book/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"

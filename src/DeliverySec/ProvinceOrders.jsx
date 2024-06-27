@@ -27,7 +27,7 @@ const ProvinceOrders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        let url = 'http://localhost:5000/ordersdelivery?status=Yes';
+        let url = 'https://bookpoint-client.vercel.app/ordersdelivery?status=Yes';
         if (selectedProvince) {
           url += `&province=${selectedProvince.replace(/ /g, '-')}`;
         }
@@ -170,7 +170,7 @@ const ProvinceOrders = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                let url = 'http://localhost:5000/ordersdelivery?status=Yes';
+                let url = 'https://bookpoint-client.vercel.app/ordersdelivery?status=Yes';
                 if (selectedProvince) {
                     url += `&province=${selectedProvince.replace(/ /g, '-')}`;
                 }
@@ -197,7 +197,7 @@ const ProvinceOrders = () => {
 
     const handleUpdateDeliveryStatus = async (orderId, delivered) => {
         try {
-            const response = await fetch(`http://localhost:5000/ordersdelivery/${orderId}`, {
+            const response = await fetch(`https://bookpoint-client.vercel.app/ordersdelivery/${orderId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

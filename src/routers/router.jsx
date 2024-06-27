@@ -68,38 +68,35 @@ import ProvinceOrders from "../DeliverySec/ProvinceOrders";
 
       ]
     },
-    {
-    path: "/admin/dashboard",
-    element: <Dashboardlayout />,
-    children: [
-      {
-        path: "/admin/dashboard",
-        element: <PrivateRoute><Dashboard /></PrivateRoute>
-      },
-      {
-        path: "/admin/dashboard/upload",
-        element: <UploadBooks />
-      },
-      {
-        path: "/admin/dashboard/manage",
-        element: <ManageBooks />
-      },
-      {
-        path: "/admin/dashboard/orders",
-        element: <Orderpage />
-      },
-      {
-        path: "/admin/dashboard/edit-books/:id",
-        element: <EditBooks />,
-        loader: ({ params }) => fetch(`https://bookpoint-api.vercel.app/books/${params.id}`)
-      },
-      {
-        path: "/admin/dashboard/notifications/:email",
-        element: <Notifications />
-      }
-        
-      ]
-    },
+   {
+  path: "/admin/dashboard",
+  element: <Dashboardlayout />,
+},
+{
+  path: "/admin/dashboard",
+  element: <PrivateRoute><Dashboard /></PrivateRoute>
+},
+{
+  path: "/admin/dashboard/upload",
+  element: <UploadBooks />
+},
+{
+  path: "/admin/dashboard/manage",
+  element: <ManageBooks />
+},
+{
+  path: "/admin/dashboard/orders",
+  element: <Orderpage />
+},
+{
+  path: "/admin/dashboard/edit-books/:id",
+  element: <EditBooks />,
+  loader: ({ params }) => fetch(`https://bookpoint-api.vercel.app/books/${params.id}`)
+},
+{
+  path: "/admin/dashboard/notifications/:email",
+  element: <Notifications />
+},
     {
       path:"/sign-up",
       element: <Signup/>

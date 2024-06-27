@@ -1,5 +1,4 @@
-import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from "../App";
 import Home from "../home/Home";
 import Shop from "../shop/Shop";
@@ -31,7 +30,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Home />
       },
       {
@@ -51,17 +50,17 @@ const router = createBrowserRouter([
         element: <AwardBooks />
       },
       {
-        path: "/logout",
+        path: "logout",
         element: <Logout />
       },
       {
-        path: "/wishlist-details",
+        path: "wishlist-details",
         element: <WishlistDetails />
       },
       {
         path: "/book/:id",
         element: <SingleBook />,
-        loader: ({ params }) => fetch(`https://bookpoint-api.vercel.app/books/${params.id}`)
+        loader: ({ params }) => fetch(https://bookpoint-api.vercel.app/books/${params.id})
       }
     ]
   },
@@ -88,7 +87,7 @@ const router = createBrowserRouter([
       {
         path: "/admin/dashboard/edit-books/:id",
         element: <EditBooks />,
-        loader: ({ params }) => fetch(`https://bookpoint-api.vercel.app/books/${params.id}`)
+        loader: ({ params }) => fetch(https://bookpoint-api.vercel.app/books/${params.id})
       },
       {
         path: "/admin/dashboard/notifications/:email",
@@ -101,7 +100,7 @@ const router = createBrowserRouter([
     element: <Signup />
   },
   {
-    path: "/login",
+    path: "login",
     element: <Login />
   },
   {

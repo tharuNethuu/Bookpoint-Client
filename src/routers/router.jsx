@@ -73,24 +73,24 @@ const router = createBrowserRouter([
         element: <PrivateRoute><Dashboard /></PrivateRoute>
       },
       {
-        path: "/admin/dashboard/upload",
+        path: "/upload",
         element: <UploadBooks />
       },
       {
-        path: "/admin/dashboard/manage",
+        path: "/manage",
         element: <ManageBooks />
       },
       {
-        path: "/admin/dashboard/orders",
+        path: "/orders",
         element: <Orderpage />
       },
       {
-        path: "/admin/dashboard/edit-books/:id",
+        path: "/edit-books/:id",
         element: <EditBooks />,
         loader: ({ params }) => fetch(`https://bookpoint-api.vercel.app/books/${params.id}`)
       },
       {
-        path: "/admin/dashboard/notifications/:email",
+        path: "/notifications/:email",
         element: <Notifications />
       }
     ]

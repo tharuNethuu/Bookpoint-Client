@@ -35,7 +35,7 @@ export const SideBar = () => {
           <Sidebar.Item href="/logout" icon={HiArrowSmLeft} className='text-yellow-200 hover:text-yellow-400 text-left flex justify-start items-center gap-2'>
             Log Out
           </Sidebar.Item>
-          <Sidebar.Item href="https://bookpoint-client.vercel.app/ordersdelivery" icon={HiTruck} className='text-yellow-200 hover:text-yellow-400 text-left flex justify-start items-center gap-2'>
+          <Sidebar.Item href="/ordersdelivery" icon={HiTruck} className='text-yellow-200 hover:text-yellow-400 text-left flex justify-start items-center gap-2'>
           Delivery Status          </Sidebar.Item>
           <Sidebar.Item href="/" icon={HiHome} className='text-yellow-200 hover:text-yellow-400 text-left flex justify-start items-center gap-2'>
             Back to Home
